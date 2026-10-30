@@ -17,6 +17,6 @@
 - Crie um ambiente virtual (venv), com o comando
 > python3.14.7 -m venv (nome da pasta)
 - Instale as bilbiotecas com os comandos
-> pip install numpy 
-> pip install matplotlib
+> pip install numpy
+> pip install matplotlib (de forma separada)
 

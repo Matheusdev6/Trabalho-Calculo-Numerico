@@ -22,8 +22,4 @@ def quicksort(array : list, left : int, right : int):
         pivot = partition(array, left, right)
         quicksort(array, 0, pivot - 1)
         quicksort(array, pivot + 1, right)
-
-arr = [2,1,4,3,5,6,8,7]
-print(arr)
-quicksort(arr,0,len(arr)-1)
-print(arr)
+        

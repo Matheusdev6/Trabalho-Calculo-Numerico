@@ -41,19 +41,9 @@ def binary_search(array : list, target : int):
     p = (l+r)//2
     while array[p] != target:
         if array[p] > target:
-            r = p
-            p = (l+r)//2
+            r = p - 1
         else:
-            l = p
-            p = (l+r)//2
+            l = p + 1
+        p = (l + r) // 2
 
     return p
-
-arr = [1,2,3,4,5,6,7,8,9,10]
-target = 7
-
-ls_index = linear_search(arr,target)
-bs_index = binary_search(arr,target)
-
-print(f"Valor Linear Search: {arr[ls_index]}. Indice : {ls_index}")
-print(f"Valor Binary Search: {arr[bs_index]}. Indice : {bs_index}")

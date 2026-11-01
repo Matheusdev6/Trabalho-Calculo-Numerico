@@ -1,3 +1,6 @@
 # Enviroment
 .env
 /myvenv
+
+# pycache
+src/__pycache__

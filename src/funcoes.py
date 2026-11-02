@@ -1,9 +1,7 @@
 import time
+import numpy as np
 from algoritmos import bubble_sort, quicksort, linear_search, binary_search
 def func_log(valores : dict, func : str):
-    pass
-
-def func_polinomial(valores : dict, func : str):
     pass
 
 def tempo(arr : list, func : str, target=None):

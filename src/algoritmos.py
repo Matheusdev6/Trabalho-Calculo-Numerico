@@ -36,14 +36,16 @@ def linear_search(array : list, target : int):
 # Binary Search
 
 def binary_search(array : list, target : int):
+    c = 0
     l = 0
     r = len(array) - 1
     p = (l+r)//2
     while array[p] != target:
+        c+=1
         if array[p] > target:
             r = p - 1
         else:
             l = p + 1
         p = (l + r) // 2
 
-    return p
+    return p,c

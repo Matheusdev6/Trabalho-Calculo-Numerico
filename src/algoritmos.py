@@ -12,6 +12,8 @@ def bubble_sort(array : list):
 def partition(array : list, l : int, r : int):
     i = l - 1
 
+    
+    
     for j in range(l,r):
         if array[j] < array[r]:
             i += 1
@@ -23,7 +25,7 @@ def partition(array : list, l : int, r : int):
 def quicksort(array : list, left : int, right : int):
     if left < right:
         pivot = partition(array, left, right)
-        quicksort(array, 0, pivot - 1)
+        quicksort(array, left, pivot - 1)
         quicksort(array, pivot + 1, right)
 
 # Linear Search

@@ -1,37 +1,66 @@
 import matplotlib.pyplot as plt
-import numpy as np
 from funcoes import tempo
-from algoritmos import quicksort, binary_search
+from algoritmos import quicksort, binary_search, bubble_sort
 import random
 
 
 x = []
 y = []
 
+dict_xy = {}
+
 n = 10
 
-for _ in range(1,7):
+# Binary Search
+# for _ in range(1,7):
 
-    print(n)
+#     arr = list(range(1,n+1))
 
-    arr = list(range(1,n+1))
+#     target = arr[random.randint(1,n-1)]
+#     time , c = tempo(arr,binary_search,target)
 
-    print("criou")
+#     x.append(n)
+#     y.append(time)
 
-    target = arr[random.randint(1,n-1)]
-    time , c = tempo(arr,binary_search,target)
+#     dict_xy[n] = time
+#     n *= 10
 
-    print(f"achou em {c} comparações")
+# Quick Sort
+# q = 100
+# for _ in range(1,9):
 
-    x.append(n)
-    y.append(time)
-    n *= 10
+#     arr = list(range(q+1))
+#     random.shuffle(arr)
 
+#     target = arr[random.randint(1,q-1)]
+#     time , c = tempo(arr,quicksort)
 
+#     x.append(q)
+#     y.append(time)
+
+#     dict_xy[q] = time
+#     q *= 2
+
+# Bubble Sort
+# for _ in range(1,20):
+
+#     arr = list(range(n+1))
+#     random.shuffle(arr)
+
+#     target = arr[random.randint(1,n-1)]
+#     time , c = tempo(arr,bubble_sort)
+
+#     x.append(n)
+#     y.append(time)
+
+#     dict_xy[n] = time
+#     n += 10
+
+print(dict_xy)
 
 plt.plot(x,y,'o')
 
 plt.xlabel("input (n)")
 plt.ylabel("tempo")
-plt.title("Gráfico")
+plt.title("Análise")
 plt.show()

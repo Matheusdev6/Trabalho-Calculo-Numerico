@@ -9,11 +9,11 @@ y = []
 
 dict_xy = {}
 
-n = 10
+
 
 # Binary Search
+# n = 10
 # for _ in range(1,7):
-
 #     arr = list(range(1,n+1))
 
 #     target = arr[random.randint(1,n-1)]
@@ -42,8 +42,9 @@ n = 10
 #     q *= 2
 
 # Bubble Sort
+# n = 10
 # for _ in range(1,20):
-
+    
 #     arr = list(range(n+1))
 #     random.shuffle(arr)
 
@@ -54,7 +55,7 @@ n = 10
 #     y.append(time)
 
 #     dict_xy[n] = time
-#     n += 10
+#     n += 20
 
 print(dict_xy)
 

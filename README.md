@@ -2,7 +2,7 @@
 
 ## Descrição
 - Esse repositório é sobre o trabalho da disciplina de Cálculo Numérico.
-- O tema que vamos escolher é Regressão Linear, vamos resolver algum problema com o método numérico apresentado em sala.
+- O tema que vamos escolher é Regressão Linear, vamos resolver algum problema com o Método dos Mínimos Quadrados (MMQ).
 
 ## Tecnologias
 - Python
@@ -17,6 +17,7 @@
 - Crie um ambiente virtual (venv), com o comando
 > python3.14.7 -m venv (nome da pasta)
 - Instale as bilbiotecas com os comandos
-> pip install numpy
-> pip install matplotlib (de forma separada)
+> pip install numpy matplotlib
+- Para escolher a função que deseja analisar, descomente o trecho do código em que ela se encontra com o comando
+**Ctrl + ;**.
 

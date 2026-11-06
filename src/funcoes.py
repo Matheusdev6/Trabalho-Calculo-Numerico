@@ -20,11 +20,42 @@ def func_log(valores : dict):
     mat[0] -= mat[1]*(mat[0][1]/mat[1][1])
     mat[0] *= (1/mat[0][0])
 
-    # perguntar para a prof sobre log n vs n*log n
-    return mat
+    return [mat[0][2],mat[1][2]]
 
-def func_poli(valores : dict, func : str):
-    pass
+def func_poli(valores : dict):
+    u_o = (np.array([1 for _ in range(len(valores))]))
+    u_1 = np.array(list(valores.keys()))                # vetores para os produtos do sistema
+    u_2 = np.array(list(valores.keys()))
+    u_2 = np.power(u_2,2)
+    y = np.array(list(valores.values()))
+
+    u_o.astype(float)
+    u_1.astype(float)
+    u_2.astype(float)
+    y.astype(float)
+
+    mat = np.array(
+        [[u_o@u_o, u_o@u_1, u_o@u_2, u_o@y],
+         [u_1@u_o, u_1@u_1, u_1@u_2, u_1@y],            # sistema montado
+         [u_2@u_o, u_2@u_1, u_2@u_2, u_2@y]]
+    )
+    
+    mat[1] -= (mat[1][0] / mat[0][0]) * mat[0]
+    mat[2] -= (mat[2][0] / mat[0][0]) * mat[0]
+
+    mat[2] -= (mat[2][1] / mat[1][1]) * mat[1]
+
+    mat[2] /= mat[2][2]
+    mat[1] -= mat[1][2] * mat[2]
+    mat[1] /= mat[1][1]
+
+    mat[0] /= mat[0][0]
+    mat[0] -= mat[0][2] * mat[2]
+    mat[0] -= mat[0][1] * mat[1]
+
+    return [mat[0][3],mat[1][3],mat[2][3]]
+
+
 def tempo(arr : list, func : str, target=None):
     if target is None and func == quicksort:
         inicio = time.perf_counter()
@@ -45,19 +76,39 @@ def tempo(arr : list, func : str, target=None):
 def analise_quicksort():
     q = 100
     x = []
-    y =[]
     dict_xy = {}
     for _ in range(1,9):
 
         arr = list(range(q+1))
         random.shuffle(arr)
 
-        time , c = tempo(arr,quicksort)
+        time , _ = tempo(arr,quicksort)
 
         x.append(q)
-        y.append(time)
 
         dict_xy[q] = time
         q *= 2
 
-    func_log(dict_xy) # verificar duvida com a professora
+    return func_log(dict_xy), dict_xy
+
+def analise_bubble_sort():
+    n = 10
+
+    for _ in range(1,20):
+        x =[]
+        dict_xy = {}
+        arr = list(range(n+1))
+        random.shuffle(arr)
+
+        time , _ = tempo(arr,bubble_sort)
+
+        x.append(n)
+        
+        dict_xy[n] = time
+        n += 20
+
+
+    return func_poli(dict_xy), dict_xy
+
+
+# ver o que cada função precisa/deve retornar

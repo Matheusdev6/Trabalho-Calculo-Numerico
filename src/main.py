@@ -1,67 +1,21 @@
 import matplotlib.pyplot as plt
-from funcoes import tempo
-from algoritmos import quicksort, binary_search, bubble_sort
-import random
+from funcoes import analise_quicksort,analise_bubble_sort
+import numpy as np
 
+analise = analise_bubble_sort()
 
-x = []
-y = []
+coef = np.array(analise[0])
+x = np.array(list(analise[1].keys()))
+y = np.array(list(analise[1].values()))
 
-dict_xy = {}
-
-
-
-# Binary Search
-# n = 10
-# for _ in range(1,7):
-#     arr = list(range(1,n+1))
-
-#     target = arr[random.randint(1,n-1)]
-#     time , c = tempo(arr,binary_search,target)
-
-#     x.append(n)
-#     y.append(time)
-
-#     dict_xy[n] = time
-#     n *= 10
-
-# Quick Sort
-# q = 100
-# for _ in range(1,9):
-
-#     arr = list(range(q+1))
-#     random.shuffle(arr)
-
-#     target = arr[random.randint(1,q-1)]
-#     time , c = tempo(arr,quicksort)
-
-#     x.append(q)
-#     y.append(time)
-
-#     dict_xy[q] = time
-#     q *= 2
-
-# Bubble Sort
-# n = 10
-# for _ in range(1,20):
-    
-#     arr = list(range(n+1))
-#     random.shuffle(arr)
-
-#     target = arr[random.randint(1,n-1)]
-#     time , c = tempo(arr,bubble_sort)
-
-#     x.append(n)
-#     y.append(time)
-
-#     dict_xy[n] = time
-#     n += 20
-
-print(dict_xy)
-
-plt.plot(x,y,'o')
-
-plt.xlabel("input (n)")
-plt.ylabel("tempo")
+# print(coef)
+# print(x)
+# print(y)
+# Plot
+plt.plot(x, y,'o')
+plt.xlabel("x")
+plt.ylabel("y")
 plt.title("Análise")
+plt.legend()
+plt.grid(alpha=0.3)
 plt.show()

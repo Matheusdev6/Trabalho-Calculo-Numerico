@@ -18,6 +18,4 @@
 > python3.14.7 -m venv (nome da pasta)
 - Instale as bilbiotecas com os comandos
 > pip install numpy matplotlib
-- Para escolher a função que deseja analisar, descomente o trecho do código em que ela se encontra com o comando
-**Ctrl + ;**.
 

@@ -30,7 +30,7 @@ def func_poli(valores : dict):
     y = np.array(list(valores.values()))
 
     u_o.astype(float)
-    u_1.astype(float)
+    u_1.astype(float)       # conversão para float para evitar problemas de contass
     u_2.astype(float)
     y.astype(float)
 
@@ -46,7 +46,7 @@ def func_poli(valores : dict):
     mat[2] -= (mat[2][1] / mat[1][1]) * mat[1]
 
     mat[2] /= mat[2][2]
-    mat[1] -= mat[1][2] * mat[2]
+    mat[1] -= mat[1][2] * mat[2]                                 # resolução do sistema
     mat[1] /= mat[1][1]
 
     mat[0] /= mat[0][0]
@@ -63,10 +63,10 @@ def tempo(arr : list, func : str, target=None):
         fim = time.perf_counter()
         return fim - inicio,None
     elif target is None and func == bubble_sort:
-        inicio = time.perf_counter()
+        inicio = time.perf_counter()                        # função para achar o tempo de execução do algoritmo.
         index = func(arr)
         fim = time.perf_counter()
-        return fim - inicio,index
+        return fim - inicio, None
     else:
         inicio = time.perf_counter()
         index = func(arr,target)
@@ -94,7 +94,7 @@ def analise_quicksort():
 def analise_bubble_sort():
     n = 10
 
-    for _ in range(1,20):
+    for _ in range(1,21):
         x =[]
         dict_xy = {}
         arr = list(range(n+1))
@@ -103,7 +103,7 @@ def analise_bubble_sort():
         time , _ = tempo(arr,bubble_sort)
 
         x.append(n)
-        
+
         dict_xy[n] = time
         n += 20
 

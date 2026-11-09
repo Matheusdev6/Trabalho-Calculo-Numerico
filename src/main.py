@@ -40,8 +40,8 @@ y_fit = valores[0] + valores[1] * x_fit + valores[2] * x_fit**2
 
 y_func = [valores[0] + valores[1] * xi + valores[2] * xi**2 for xi in x]
 
-erro = sum((math.pow(y[i],2)) + (math.pow(y_func[i],2)) for i in range(len(y)))
-print(f"Erro da função : {erro}.")
+erro = sum((math.pow(y_func[i] - y[i],2)) for i in range(len(y)))
+print(f"Erro da função : {erro}")
 
 plt.scatter(x, y, label="Medições (mediana)")
 plt.plot(x_fit, y_fit, color="red", label="Ajuste quadrático")

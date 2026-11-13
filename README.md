@@ -15,7 +15,9 @@
 - Clone o repositório, com o comando
 > git clone https://github.com/Matheusdev6/Trabalho-Calculo-Numerico.git
 - Crie um ambiente virtual (venv), com o comando
-> python3.14.7 -m venv (nome da pasta)
+> python3.14 -m venv (nome da pasta)
+- Ative o ambiente virtual com o comando (Windows PowerShell):
+> (nome da pasta)\Scripts\Activate.ps1
 - Instale as bilbiotecas com os comandos
 > pip install numpy matplotlib
 
